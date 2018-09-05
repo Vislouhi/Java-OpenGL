@@ -62,6 +62,12 @@ https://lwjglgamedev.gitbooks.io/3d-game-development-with-lwjgl/content/chapter0
 
 https://github.com/javagl/Obj
 
+# Добавить освещение
+
+https://lwjglgamedev.gitbooks.io/3d-game-development-with-lwjgl/content/chapter10/chapter10.html
+
+https://habr.com/post/333932/
+
 
 
 
