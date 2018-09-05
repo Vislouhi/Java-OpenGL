@@ -42,7 +42,11 @@ https://lwjglgamedev.gitbooks.io/3d-game-development-with-lwjgl/content/chapter0
 
 Все что касается текстур пока пропустить.
 
-Классы Matrix4f, Vector3f и т.д. Можно попробовать взять здесь
+Классы Matrix4f, Vector3f и т.д. Можно попробовать взять здесь:
+
+https://github.com/SilverTiger/lwjgl3-tutorial/tree/master/src/silvertiger/tutorial/lwjgl/math
+
+а можно подключить jar-ку jogl скачав ее отсюда:
 
 http://jogamp.org/deployment/jogamp-current/archive/jogamp-all-platforms.7z
 
@@ -52,7 +56,13 @@ http://jogamp.org/deployment/jogamp-current/archive/jogamp-all-platforms.7z
 
 https://ru.wikipedia.org/wiki/Obj
 
-
-
 https://lwjglgamedev.gitbooks.io/3d-game-development-with-lwjgl/content/chapter09/chapter9.html
+
+Готовая библиотека для импорта файлом obj и mtl.
+
+https://github.com/javagl/Obj
+
+
+
+
 
