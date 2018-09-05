@@ -22,3 +22,9 @@ https://www.youtube.com/watch?v=VH9KAhjXVFM
 
 http://internetaccessmonitor.ru/7864-lwjgl_dll.html
 
+Проект HelloWorld.
+
+Запустить проект состоящий из двух классов.
+
+https://github.com/Vislouhi/Java-OpenGL/blob/master/src/Main.java
+
