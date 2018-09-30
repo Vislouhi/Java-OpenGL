@@ -50,7 +50,7 @@ http://www.programmersforum.ru/showthread.php?t=198877
 https://lwjglgamedev.gitbooks.io/3d-game-development-with-lwjgl/content/chapter18/chapter18.html
 
 
-№ Было
+# Было
 
 Что такое OpenGL?
 
