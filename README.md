@@ -15,8 +15,35 @@ https://drive.google.com/open?id=157wgpLvwQv77zVeCKuYr238O1qVcDqOy
 https://lwjglgamedev.gitbooks.io/3d-game-development-with-lwjgl/content/chapter10/chapter10.html
 
 
+Здесь аналогичная статья, но по русски.
 
+https://habr.com/post/333932/
 
+2. Наложить на объект текстуру.
+
+Для этого потребуется:
+
+ - Подгрузить из файла *.obj координаты наложения текстур.
+ 
+ - Подгрузить из файла саму текстуру
+ 
+ - Загрузить все это в видеопамять
+ 
+ - отредактировать шейдеры.
+ 
+ В помощь эта статья:
+ 
+ https://lwjglgamedev.gitbooks.io/3d-game-development-with-lwjgl/content/chapter07/chapter7.html
+ 
+ 3.Сделать прозрачный объект
+ 
+https://habr.com/post/343096/
+
+http://opengl-tutorial.blogspot.com/p/10.html
+
+4. Клик по объекту
+
+http://www.programmersforum.ru/showthread.php?t=198877
 
 
 
