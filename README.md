@@ -45,9 +45,12 @@ http://opengl-tutorial.blogspot.com/p/10.html
 
 http://www.programmersforum.ru/showthread.php?t=198877
 
+5. Наложение теней
+
+https://lwjglgamedev.gitbooks.io/3d-game-development-with-lwjgl/content/chapter18/chapter18.html
 
 
-
+№ Было
 
 Что такое OpenGL?
 
