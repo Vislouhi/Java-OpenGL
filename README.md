@@ -10,7 +10,11 @@ https://drive.google.com/open?id=157wgpLvwQv77zVeCKuYr238O1qVcDqOy
 
 1. Модернизировать освещение (добавить блики).
 
+Из этой статьи изъять все необходимое для создание бликов. Полностью импортировать отсюда код не следует.
+
 https://lwjglgamedev.gitbooks.io/3d-game-development-with-lwjgl/content/chapter10/chapter10.html
+
+
 
 
 
