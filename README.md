@@ -1,5 +1,23 @@
 # Java-OpenGL
 
+# Стартовый проект
+
+Проект для эклипс. Загружается через import -> Gradle -> Import existing project.
+
+https://drive.google.com/open?id=157wgpLvwQv77zVeCKuYr238O1qVcDqOy
+
+# Задачи.
+
+1. Модернизировать освещение (добавить блики).
+
+https://lwjglgamedev.gitbooks.io/3d-game-development-with-lwjgl/content/chapter10/chapter10.html
+
+
+
+
+
+
+
 Что такое OpenGL?
 
 https://ru.wikipedia.org/wiki/OpenGL
