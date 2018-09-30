@@ -42,13 +42,16 @@ https://lwjglgamedev.gitbooks.io/3d-game-development-with-lwjgl/content/chapter0
 
 Все что касается текстур пока пропустить.
 
-Классы Matrix4f, Vector3f и т.д. Можно попробовать взять здесь:
+Классы Matrix4f, Vector3f и т.д. находятся в бибилотеке joml. Чтобы подключить эту библиотеку необходимо создать
+проект Gradle. Инструкция здесь:
 
-https://github.com/SilverTiger/lwjgl3-tutorial/tree/master/src/silvertiger/tutorial/lwjgl/math
+https://www.boraji.com/how-to-create-a-gradle-java-project-in-eclipse
 
-а можно подключить jar-ку jogl скачав ее отсюда:
+Инструкция по подключению joml в Gradle здесь:
 
-http://jogamp.org/deployment/jogamp-current/archive/jogamp-all-platforms.7z
+https://github.com/JOML-CI/JOML/wiki#maven-setup-for-desktop
+
+
 
 # Загрузить и отобразить объект в формате WaveFront
 
