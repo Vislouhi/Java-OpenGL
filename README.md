@@ -64,6 +64,22 @@ glfwSetMouseButtonCallback(window, mouseCallback = new GLFWMouseButtonCallback()
 
 Сделать прозрачный объект.
 
+Будем работать по этой статье:
+
+https://habr.com/post/343096/
+
+Она написана на C++, но для java синтаксис практически такой же.
+
+Сначала придется освоить наложение текстур. Воспользуемся этой статьей
+
+https://lwjglgamedev.gitbooks.io/3d-game-development-with-lwjgl/content/chapter07/chapter7.html
+
+Отсюда добавим загрузку координат текстур в видеокарту
+
+https://github.com/lwjglgamedev/lwjglbook/blob/master/chapter07/c07-p1/src/main/java/org/lwjglb/engine/graph/Mesh.java
+
+
+
 
 # Задачи.
 
