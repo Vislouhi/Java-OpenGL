@@ -74,7 +74,7 @@ https://habr.com/post/343096/
 
 https://lwjglgamedev.gitbooks.io/3d-game-development-with-lwjgl/content/chapter07/chapter7.html
 
-Класс, который загружает текстуру в видеокарту
+Класс, который загружает текстуру в видеокарту копируем в проект как есть
 
 https://github.com/lwjglgamedev/lwjglbook/blob/master/chapter08/src/main/java/org/lwjglb/engine/graph/Texture.java
 
@@ -82,7 +82,15 @@ https://github.com/lwjglgamedev/lwjglbook/blob/master/chapter08/src/main/java/or
 
 https://github.com/lwjglgamedev/lwjglbook/blob/master/chapter08/src/main/java/org/lwjglb/engine/graph/Mesh.java
 
-Буфер подгружаем с помощью
+Буфер с координатами текстур подгружаем с помощью этой библиотеки, она уже подключена:
+
+https://github.com/javagl/Obj
+
+Пример ее использования здесь:
+
+https://github.com/javagl/ObjSamples/blob/master/src/main/java/de/javagl/obj/samples/ObjSample_10_GetDataForOpenGL.java
+
+
 
 
 # Задачи.
