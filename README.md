@@ -8,7 +8,7 @@ https://drive.google.com/open?id=157wgpLvwQv77zVeCKuYr238O1qVcDqOy
 
 # Максим и Илья
 
-<h1>Дома.</h1>
+<h2>Дома.</h2>
 
 Обработка событий мыши описывается в этой статье.
 
@@ -30,17 +30,37 @@ mouseCallback = new MouseHandler() эта запись означает, что 
 Класс можно и не создавать, а воспользоваться такой записью
 
 glfwCursorPosCallback(window, mouseCallback = new GLFWCursorPosCallback() {
+
 	@Override
 	public void invoke(long window, double xpos, double ypos) {
 		 //Здесь записывается код, который будет выполняться при изменении положения мыши
     		System.out.println("X: " + xpos + " Y: " + ypos);
    	}
+	
+});
+
+Обработка нажатий на кнопки мыши  производится аналогично
+
+https://github.com/LWJGL/lwjgl3-wiki/wiki/2.6.3-Input-handling-with-GLFW
+
+glfwSetMouseButtonCallback(window, mouseCallback = new GLFWMouseButtonCallback() {
+
+	@Override
+	public void invoke(long window, int button, int action, int mods) {
+		System.out.println("button: " + button + " action: " + action+ " mods: " + mods);
+	}
 });
 
 
+<h2>В аудитории.</h2>
 
+Загузить и отрисовать два объекта.
 
-В аудитории.
+Для этого придется объявить еще объекты классов objLoader, MeshFromBuffer.
+
+В цикле отрисовки добавить отрисовку нового объекта. Перед отрисовкой нового объекта изменить маркер шаблона.
+
+# Александр и Максим
 
 
 
