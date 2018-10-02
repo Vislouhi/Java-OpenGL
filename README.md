@@ -74,11 +74,15 @@ https://habr.com/post/343096/
 
 https://lwjglgamedev.gitbooks.io/3d-game-development-with-lwjgl/content/chapter07/chapter7.html
 
-Отсюда добавим загрузку координат текстур в видеокарту
+Класс, который загружает текстуру в видеокарту
 
-https://github.com/lwjglgamedev/lwjglbook/blob/master/chapter07/c07-p1/src/main/java/org/lwjglb/engine/graph/Mesh.java
+https://github.com/lwjglgamedev/lwjglbook/blob/master/chapter08/src/main/java/org/lwjglb/engine/graph/Texture.java
 
+Отсюда добавим загрузку координат текстур в видеокарту. Изменения вносим в класс MeshFromBuffer. 
 
+https://github.com/lwjglgamedev/lwjglbook/blob/master/chapter08/src/main/java/org/lwjglb/engine/graph/Mesh.java
+
+Буфер подгружаем с помощью
 
 
 # Задачи.
