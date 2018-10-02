@@ -8,9 +8,43 @@ https://drive.google.com/open?id=157wgpLvwQv77zVeCKuYr238O1qVcDqOy
 
 # Максим и Илья
 
-Дома.
+<h1>Дома.</h1>
 
-Обработка событий мыши.
+Обработка событий мыши описывается в этой статье.
+
+https://tutorialedge.net/java/lwjgl3/lwjgl-3-mouse-current-position-tutorial/
+
+Создается класс MouseHandler.
+
+Создается объект, ответственный за реакцию на события мыши.
+
+private GLFWCursorPosCallback mouseCallback;
+
+В процедуре init() указывается в какой объект будут отсылаться данные о положении курсора.
+
+glfwSetCursorPosCallback(window, mouseCallback = new MouseHandler());
+
+mouseCallback = new MouseHandler() эта запись означает, что прежде, чем процедура glfwSetCursorPosCallback  обработает
+объект mouseCallback он инициализируется с помощью конструктора MouseHandler().
+
+Класс можно и не создавать, а воспользоваться такой записью
+
+glfwCursorPosCallback(window, mouseCallback = new GLFWCursorPosCallback() {
+
+	@Override
+ 
+	public void invoke(long window, double xpos, double ypos) {
+ 
+ //Здесь записывается код, который будет выполняться при изменении положения мыши
+ 
+   System.out.println("X: " + xpos + " Y: " + ypos);
+   
+	}
+ 
+});
+
+
+
 
 В аудитории.
 
