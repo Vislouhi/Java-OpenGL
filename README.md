@@ -30,17 +30,11 @@ mouseCallback = new MouseHandler() эта запись означает, что 
 Класс можно и не создавать, а воспользоваться такой записью
 
 glfwCursorPosCallback(window, mouseCallback = new GLFWCursorPosCallback() {
-
 	@Override
- 
 	public void invoke(long window, double xpos, double ypos) {
- 
- //Здесь записывается код, который будет выполняться при изменении положения мыши
- 
-   System.out.println("X: " + xpos + " Y: " + ypos);
-   
-	}
- 
+		 //Здесь записывается код, который будет выполняться при изменении положения мыши
+    		System.out.println("X: " + xpos + " Y: " + ypos);
+   	}
 });
 
 
