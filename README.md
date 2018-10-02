@@ -62,7 +62,7 @@ glfwSetMouseButtonCallback(window, mouseCallback = new GLFWMouseButtonCallback()
 
 # Александр и Максим
 
-
+Сделать прозрачный объект.
 
 
 # Задачи.
