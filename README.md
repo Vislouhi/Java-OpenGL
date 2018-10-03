@@ -20,7 +20,7 @@ https://www.lwjgl.org/browse/stable/windows/x64
 http://wiki.eclipse.org/EGit/User_Guide#Basic_Tutorial:_Adding_a_project_to_version_control
 
 
-# Максим и Илья
+# Анатолий и Илья
 
 <h2>Дома.</h2>
 
