@@ -68,11 +68,17 @@ glfwSetMouseButtonCallback(window, mouseCallback = new GLFWMouseButtonCallback()
 
 <h2>В аудитории.</h2>
 
-Загузить и отрисовать два объекта.
+Поворот объекта.
 
-Для этого придется объявить еще объекты классов objLoader, MeshFromBuffer.
+Объявить переменную класса GameItem
 
-В цикле отрисовки добавить отрисовку нового объекта. Перед отрисовкой нового объекта изменить маркер шаблона.
+private GameItem monkey;
+
+Инициализировать ее и задать поворот.
+
+ monkey = new GameItem(mesh);  
+                 
+        monkey.setRotation(30.0f,30.0f,30.0f);
 
 # Александр и Максим
 
