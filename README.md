@@ -78,7 +78,12 @@ private GameItem monkey;
 
  monkey = new GameItem(mesh);  
                  
-        monkey.setRotation(30.0f,30.0f,30.0f);
+ monkey.setRotation(30.0f,30.0f,30.0f);
+ 
+ Сделать в шейдере матрицу поворота.
+ 
+ "uniform mat4 rotationMatrix;"+
+ 
 
 # Александр и Максим
 
