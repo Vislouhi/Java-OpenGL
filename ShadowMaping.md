@@ -50,7 +50,7 @@ https://github.com/Vislouhi/Java-OpenGL/blob/master/model/cubeAndPlane.obj
         "{" + 
         " gl_FragDepth = gl_FragCoord.z;" + 
         //Эта строчка нужна для проверки карты теней, в последствии ее следует удалить.
-        "fragColor =vec4(1.0,1.0, gl_FragCoord.z,1.0);}" +
+        "fragColor =vec4(0.0,0.0, gl_FragCoord.z,1.0);}" +
         "}";
         
         
@@ -89,7 +89,7 @@ https://github.com/lwjglgamedev/lwjglbook/blob/master/chapter18/c18-p1/src/main/
 	
 Далее работаем между конструктором и деструктором.
 
-Bindим буфер карты теней
+Bindим буффер карты теней
 
 	glBindFramebuffer(GL_FRAMEBUFFER, shadowMap.getDepthMapFBO());
 	
@@ -123,4 +123,19 @@ Bindим буфер карты теней
            
           glBindVertexArray(0);
 	
+Отключаем буффер карты теней:
+
+	glBindFramebuffer(GL_FRAMEBUFFER, 0);
 	
+Теперь временно закоментируем подключение буфера карты теней
+
+	//glBindFramebuffer(GL_FRAMEBUFFER, shadowMap.getDepthMapFBO());
+	
+В классе ShadowMap исправим размер буфера так чтобы он совпадал с размером окна.
+
+	public static final int SHADOW_MAP_WIDTH = 300;
+	public static final int SHADOW_MAP_HEIGHT = 300;
+	
+Теперь, если все сделанно правильно, должна отобразиться карта теней.
+	
+
