@@ -8,13 +8,17 @@ https://github.com/Vislouhi/Java-OpenGL/blob/master/model/cubeAndPlane.obj
 
 Параметры камеры следующие:
 
- camera.setPosition(-9.5f,1.0f,-3.5f);
- 
- camera.setRotation(20.0f,120.0f,0.0f);
+ 	camera.setPosition(-9.5f,1.0f,-3.5f);
+  	camera.setRotation(20.0f,120.0f,0.0f);
  
  Зададим источник света.
  
- Vector3f lightPosition = new Vector3f(-2.0f,5.0f,-4.0f);
+ 	Vector3f lightPosition = new Vector3f(-2.0f,5.0f,-4.0f);
+ 
+ Зададим направление источника света:
+       
+ 
+ 
  
  Создадим шейдеры для генерации карты теней
  
@@ -24,7 +28,7 @@ https://github.com/Vislouhi/Java-OpenGL/blob/master/model/cubeAndPlane.obj
     	"layout (location=0) in vec3 position;"+
     	//Создает вид с положения источника света.
     	"uniform mat4 modelLightViewMatrix;"+
-      //Создает ортографическую проекцию куба на плоскость экрана
+        //Создает ортографическую проекцию куба на плоскость экрана
     	"uniform mat4 orthoProjectionMatrix;"+
     	"void main()"+
     	"{"+
@@ -44,3 +48,11 @@ https://github.com/Vislouhi/Java-OpenGL/blob/master/model/cubeAndPlane.obj
         
         
 Далее прозводится загрузка шейдеров в видеокарту с помощю класса ShaderProgramm.
+
+Теперь, перед тем как войти в цикл рендера, создадим матрицы modelLightViewMatrix и orthoProjectionMatrix.
+
+Создадим класс Transformation.
+
+https://github.com/lwjglgamedev/lwjglbook/blob/master/chapter18/c18-p1/src/main/java/org/lwjglb/engine/graph/Transformation.java
+
+
