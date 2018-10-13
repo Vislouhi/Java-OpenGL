@@ -18,43 +18,29 @@ https://github.com/Vislouhi/Java-OpenGL/blob/master/model/cubeAndPlane.obj
  
  Создадим шейдеры для генерации карты теней
  
- String vShadowShader=
+ 	String vShadowShader=
  
-    	"#version 330 \n"+
-
+  	"#version 330 \n"+
     	"layout (location=0) in vec3 position;"+
     	//Создает вид с положения источника света.
     	"uniform mat4 modelLightViewMatrix;"+
       //Создает ортографическую проекцию куба на плоскость экрана
     	"uniform mat4 orthoProjectionMatrix;"+
-
     	"void main()"+
-      
     	"{"+
-      
     	 "   gl_Position = orthoProjectionMatrix * modelLightViewMatrix * vec4(position, 1.0f);"+
-       
     	"}";
- 
- String fShadowShader=
- 
-				"#version 330\r\n" + 
-        
-						"out vec4 fragColor;"+
-            
-				"\r\n" + 
-        
-				"void main()\r\n" + 
-        
-				"{\r\n" + 
-        
-				"    gl_FragDepth = gl_FragCoord.z;\r\n" + 
-        
+
+	String fShadowShader=
+
+	"#version 330" + 
+        "out vec4 fragColor;"+
+        "void main()" + 
+        "{" + 
+        " gl_FragDepth = gl_FragCoord.z;" + 
         //Эта строчка нужна для проверки карты теней, в последствии ее следует удалить.
-        
-				"fragColor =vec4(1.0,1.0, gl_FragCoord.z,1.0);}" +
-          
-				"}";
+        "fragColor =vec4(1.0,1.0, gl_FragCoord.z,1.0);}" +
+        "}";
         
         
-        Далее прозводится загрузка шейдеров в видеокарту с помощю класса ShaderProgramm.
+Далее прозводится загрузка шейдеров в видеокарту с помощю класса ShaderProgramm.
