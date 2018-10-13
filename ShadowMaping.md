@@ -64,26 +64,63 @@ https://github.com/lwjglgamedev/lwjglbook/blob/master/chapter18/c18-p1/src/main/
 
 	 //Матрица вида с положения источника света строится исходя из положения источника света и пго направления
 	 Matrix4f lightViewMatrix = transformation.updateLightViewMatrix(lightPosMulByFactor,lightDir);
-         //Ортографическая матрица строится исходя из размеров кубической(в данном случае) части пространства ограниченной в трех 		//направлениях
+          //Ортографическая матрица строится исходя из размеров кубической(в данном случае) части пространства ограниченной в трех
+	  //направлениях
          Matrix4f orthoProjMatrix = transformation.updateOrthoProjectionMatrix(-10.0f, 10.0f, -10.0f, 10.0f, -1.0f, 20.0f);
 	 
 Теперь подгрузим класс ShadowMap отсюда:
 
 https://github.com/lwjglgamedev/lwjglbook/blob/master/chapter18/c18-p1/src/main/java/org/lwjglb/engine/graph/ShadowMap.java
 
-В цикле рендера все закоментируем. 
-		shadowMap.cleanup();
-            // Poll for window events. The key callback above will only be
-            // invoked during this call.
-			glfwSwapBuffers(window); 
-            glfwPollEvents();
+В цикле рендера все закоментируем. Кроме строчек отвечающих за обновление экрана.
+		
+	glfwSwapBuffers(window); 
+        glfwPollEvents();
 
 Создаем переменную класса ShadowMap.
 
 Вызываем конструктор
+
 	shadowMap = new ShadowMap();
 
 И сразу же припишем деструктор, чтобы в видеопамяти не копились текстуры с картами теней.
+
 	shadowMap.cleanup();
+	
+Далее работаем между конструктором и деструктором.
+
+Bindим буфер карты теней
+
+	glBindFramebuffer(GL_FRAMEBUFFER, shadowMap.getDepthMapFBO());
+	
+Создаем экран	
+	
+	glViewport(0, 0, ShadowMap.SHADOW_MAP_WIDTH, ShadowMap.SHADOW_MAP_HEIGHT);
+        glClear(GL_DEPTH_BUFFER_BIT);
+	
+Подключаем, и сразу отключаем программу генерации буфера карты теней
+
+	shaderShadowProgram.bind();
+	
+	shaderShadowProgram.unbind();
+	
+Теперь между bind и unbind Передаем в шейдер матрицы.
+
+ 	shaderShadowProgram.setUniform("orthoProjectionMatrix", orthoProjMatrix);
+        Matrix4f modelLightViewMatrix = transformation.buildModelViewMatrix(gameItem, lightViewMatrix);
+        shaderShadowProgram.setUniform("modelLightViewMatrix", modelLightViewMatrix);
+	
+И включаем рисование модели:
+
+	glBindVertexArray(gameItem.getMesh().getVaoId());
+            
+            glEnableVertexAttribArray(0);
+            
+            glDrawElements(GL_TRIANGLES, gameItem.getMesh().getVertexCount(), GL_UNSIGNED_INT, 0);
+
+           
+            glDisableVertexAttribArray(0);
+           
+          glBindVertexArray(0);
 	
 	
