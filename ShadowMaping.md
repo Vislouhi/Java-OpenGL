@@ -16,8 +16,14 @@ https://github.com/Vislouhi/Java-OpenGL/blob/master/model/cubeAndPlane.obj
  	Vector3f lightPosition = new Vector3f(-2.0f,5.0f,-4.0f);
  
  Зададим направление источника света:
-       
  
+	    float lightAngleX = 50.0f;
+            float lightAngleY = 120.0f;
+            float lightAngleZ = 0;
+ 
+ Создадим вектор равный вектрору положения света, домноженному на настроечную величину.
+ 
+ Vector3f lightPosMulByFactor =new Vector3f(lightPosition.x,lightPosition.y,lightPosition.z).mul(0.1f);
  
  
  Создадим шейдеры для генерации карты теней
@@ -51,8 +57,10 @@ https://github.com/Vislouhi/Java-OpenGL/blob/master/model/cubeAndPlane.obj
 
 Теперь, перед тем как войти в цикл рендера, создадим матрицы modelLightViewMatrix и orthoProjectionMatrix.
 
-Создадим класс Transformation.
+Создадим класс Transformation. Возьмем готовый класс отсюда:
 
 https://github.com/lwjglgamedev/lwjglbook/blob/master/chapter18/c18-p1/src/main/java/org/lwjglb/engine/graph/Transformation.java
+
+
 
 
