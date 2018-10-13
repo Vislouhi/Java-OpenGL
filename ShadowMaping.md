@@ -20,6 +20,7 @@ https://github.com/Vislouhi/Java-OpenGL/blob/master/model/cubeAndPlane.obj
 	    float lightAngleX = 50.0f;
             float lightAngleY = 120.0f;
             float lightAngleZ = 0;
+	    Vector3f lightDir = new Vector3f(lightAngleX, lightAngleY, lightAngleZ);
  
  Создадим вектор равный вектрору положения света, домноженному на настроечную величину.
  
@@ -61,6 +62,28 @@ https://github.com/Vislouhi/Java-OpenGL/blob/master/model/cubeAndPlane.obj
 
 https://github.com/lwjglgamedev/lwjglbook/blob/master/chapter18/c18-p1/src/main/java/org/lwjglb/engine/graph/Transformation.java
 
+	 //Матрица вида с положения источника света строится исходя из положения источника света и пго направления
+	 Matrix4f lightViewMatrix = transformation.updateLightViewMatrix(lightPosMulByFactor,lightDir);
+         //Ортографическая матрица строится исходя из размеров кубической(в данном случае) части пространства ограниченной в трех 		//направлениях
+         Matrix4f orthoProjMatrix = transformation.updateOrthoProjectionMatrix(-10.0f, 10.0f, -10.0f, 10.0f, -1.0f, 20.0f);
+	 
+Теперь подгрузим класс ShadowMap отсюда:
 
+https://github.com/lwjglgamedev/lwjglbook/blob/master/chapter18/c18-p1/src/main/java/org/lwjglb/engine/graph/ShadowMap.java
 
+В цикле рендера все закоментируем. 
+		shadowMap.cleanup();
+            // Poll for window events. The key callback above will only be
+            // invoked during this call.
+			glfwSwapBuffers(window); 
+            glfwPollEvents();
 
+Создаем переменную класса ShadowMap.
+
+Вызываем конструктор
+	shadowMap = new ShadowMap();
+
+И сразу же припишем деструктор, чтобы в видеопамяти не копились текстуры с картами теней.
+	shadowMap.cleanup();
+	
+	
