@@ -137,5 +137,38 @@ Bindим буффер карты теней
 	public static final int SHADOW_MAP_HEIGHT = 300;
 	
 Теперь, если все сделанно правильно, должна отобразиться карта теней.
+
+Снимем коментарий с 
+	
+	//glBindFramebuffer(GL_FRAMEBUFFER, shadowMap.getDepthMapFBO());	
+
+Дополним vShader отрисовки сцены. 
+
+Будем передавать в шейдер эти матрицы
+
+	"uniform mat4 orthoProjectionMatrix;"+
+	"uniform mat4 modelLightViewMatrix;"+
+	
+	//Будем передавать в fShader координаты точки расчитанные с положения источника света
+	"out vec4 mlightviewVertexPos;"+
+	"mlightviewVertexPos = orthoProjectionMatrix * modelLightViewMatrix * vec4(position, 1.0);"+
+
+Добавим процедуру проверки наличия тени в данной позиции в fShader.
+
+	"float calcShadow(vec4 position)" + 
+	"{" + 
+	"    float shadowFactor = 1.0;" + 
+	"    vec3 projCoords = position.xyz;" + 
+	  // Transform from screen coordinates to texture coordinates"
+	"    projCoords = projCoords * 0.5 + 0.5;" + 
+	"    if ( projCoords.z-0.12 < texture(shadowMap, projCoords.xy).r ) " + 
+	"    {" + 
+	 // Current fragment is not in shade 
+	"        shadowFactor = 0;" + 
+	"    }" + 
+	"    return 1.0 - shadowFactor;" + 
+	"} "
+	
+
 	
 
