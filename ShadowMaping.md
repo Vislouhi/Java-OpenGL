@@ -169,6 +169,32 @@ Bindим буффер карты теней
 	"    return 1.0 - shadowFactor;" + 
 	"} "
 	
+Опишем прием координат с точки зрения источника света, и ссылки на текстуру.
+
+	"in vec4 mlightviewVertexPos;"+
+	"uniform sampler2D shadowMap;"+
+
+Вычислим наличие тени
+	
+	"float shadow = calcShadow(mlightviewVertexPos);"+	
+	
+И добавим это множителем во fragColor
+
+	"fragColor = (Все что было раньше)*shadow;"+
+
+Раскоментируем рисование модели.
+
+Теперь наладим передачу матриц orthoProjectionMatrix и modelLightViewMatrix в шейдер.
+
+И передадим в шейдер индекс карты теней 
+
+	glBindTexture(GL_TEXTURE_2D, shadowMap.getDepthMapTexture().getId()); 
+	
+И не забудем активировать текстуры перед циклом рендера.
+	
+	glActiveTexture(GL_TEXTURE0);
+	
+	
 
 	
 
