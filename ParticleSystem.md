@@ -67,8 +67,7 @@ https://github.com/lwjglgamedev/lwjglbook/blob/master/chapter21/c21-p1/src/main/
 	   glBindVertexArray(gameItem.getMesh().getVaoId());
           
            glEnableVertexAttribArray(0);
-           glEnableVertexAttribArray(2);
-           
+               
            Vector3f particlePosition = new Vector3f(0.0f,0.0f,0.0f);
            shaderProgram.setUniform("particlePosition",particlePosition);
            
