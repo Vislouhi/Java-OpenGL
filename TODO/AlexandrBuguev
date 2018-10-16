@@ -30,13 +30,61 @@
  object1.obj
  object2.obj
  ...
- [Dynamic]
+ [Interface]
+ name=klemma
  mesh=mesh.obj
  rotation=true
  rotationBound1=30
  rotationBound2=50
  rotationAxis=0.3 3.8 0.0
  rotationPoint=1.0 2.1 0.7
+ actionOnLMB=rotate
+ translation=true
+ translationBound1=1.0 2.1 0.7
+ translationBound2=1.0 2.1 0.7
+ actionOnRMB=translate
+ glowing=true
+ glowMesh=glow.obj
+ glowAlpha=0.5
+ actionOnRMB=glow
+ show=true
+ showMesh=showMesh.obj
+ actionOnRMB=show
+ zoom=true
+ zoomPoint = 1.0 2.1 0.7
+ zoomMaxRange=2.0
+ actionOnScrollWheel=zoom
+ hud=true
+ hud=hud.png
+ hud Position=20.1% 50.3%
+ invoke=true
+ invokeKey=accelerationStart
+ 
+ [DyanmicProcess]
+ name=spring
+ math=springAndGravity
+ springInitialPoint=1.0 2.1 0.7
+ springEndPoint=1.0 2.1 0.7
+ springStep=1.0
+ springRadius=10.0
+ springK=2.0
+ onEventKey=springStart
+ offEventKey=springFinish
+ 
+ [DyanmicProcess]
+ name=acceleration
+ object=movingMesh.obj
+ startPoint=0.5
+ endPoint=2.5
+ accelerationForce=2.3;
+ onEventKey=accelerationStart
+ offEventKey="ccelerationFinish
+ 
+ [Button]
+ 
+ 
+ 
+ 
  
  
   - rotationAxis
