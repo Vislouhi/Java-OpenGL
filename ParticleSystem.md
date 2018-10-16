@@ -47,7 +47,7 @@ https://github.com/lwjglgamedev/lwjglbook/blob/master/chapter21/c21-p1/src/main/
 	glEnable(GL_BLEND);
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE);
 
-Отключаем режим проверки глубины
+Отключаем режим проверки глубины. Обязательно должно стоять после glClear.
 
 	glDepthMask(false);
 	
