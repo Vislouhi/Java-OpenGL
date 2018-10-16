@@ -40,3 +40,47 @@ https://github.com/lwjglgamedev/lwjglbook/blob/master/chapter21/c21-p1/src/main/
     	    	"{"+
     	    	   "fragColor = vec4(1.0, 1.0, 1.0, 0.7);"+
     	    	"}";
+		
+		
+Перед циклом рендера включить смешивание цветов
+
+	glEnable(GL_BLEND);
+	glBlendFunc(GL_SRC_ALPHA, GL_ONE);
+
+Отключаем режим проверки глубины
+
+	glDepthMask(false);
+	
+Теперь внутри цикла рендера расчитать матрицу вида на частицу
+	
+ 	Matrix4f modelMatrix = transformation.buildModelMatrix(gameItme);
+        viewMatrix.transpose3x3(modelMatrix);
+        Matrix4f modelViewMatrix = transformation.buildModelViewMatrix(modelMatrix, viewMatrix);
+        modelViewMatrix.scale(Podstavkablend.getScale());
+
+И забросить эту матрицу в видеокарту
+
+        shaderProgram.setUniform("modelViewMatrix", modelViewMatrix);
+	
+Рисуем две частицы
+	
+	   glBindVertexArray(gameItem.getMesh().getVaoId());
+          
+           glEnableVertexAttribArray(0);
+           glEnableVertexAttribArray(2);
+           
+           Vector3f particlePosition = new Vector3f(0.0f,0.0f,0.0f);
+           shaderProgram.setUniform("particlePosition",particlePosition);
+           
+           glDrawElements(GL_TRIANGLES, Podstavkablend.getMesh().getVertexCount(), GL_UNSIGNED_INT, 0);
+           
+           particlePosition = new Vector3f(0.5f,0.0f,0.0f);
+           shaderProgram.setUniform("particlePosition",particlePosition);
+           
+           glDrawElements(GL_TRIANGLES, Podstavkablend.getMesh().getVertexCount(), GL_UNSIGNED_INT, 0);
+           
+           glDisableVertexAttribArray(0);
+           glBindVertexArray(0);
+
+
+
