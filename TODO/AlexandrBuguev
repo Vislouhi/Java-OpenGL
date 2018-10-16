@@ -23,3 +23,26 @@
   - glowingColor
   
   - mouseAimText
+  
+3. Создать файл для подгрузки сцены.
+
+   [Static]
+   object1.obj
+   object2.obj
+    ...
+  [Dynamic]
+  mesh=mesh.obj
+  rotation=true
+  rotationBoinds
+  
+  - rotationAxis
+  
+  - rotationPoint
+  
+  - actionOnLMB
+  
+  - actionOnRMB
+  
+  - glowingMesh
+  
+  - glowingColor
