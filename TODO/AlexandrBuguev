@@ -3,7 +3,7 @@
 
 
   
-2. Создать файл для подгрузки сцены.
+2. Создать систему подгрузки сцены из файла. Структура файла примерно такая
 
  [Static]
  object1.obj
@@ -38,6 +38,16 @@
  hud Position=20.1% 50.3%
  invoke=true
  invokeKey=accelerationStart
+ swap=true
+ swapRotation=true
+ swapRotationBound1=30
+ swapRotationBound2=50
+ swapRotationAxis=0.3 3.8 0.0
+ swapRotationPoint=1.0 2.1 0.7
+ swapTranslation=true
+ swapTranslationBound1=1.0 2.1 0.7
+ swapTranslationBound2=1.0 2.1 0.7
+ actionOnRMB=swap
  
  [DyanmicProcess]
  name=spring
