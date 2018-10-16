@@ -81,6 +81,11 @@ https://github.com/lwjglgamedev/lwjglbook/blob/master/chapter21/c21-p1/src/main/
            glDisableVertexAttribArray(0);
            glBindVertexArray(0);
 	   
+	   
+Подключим этот класс. Он хранит информацию об отдельной частице.
+
+https://github.com/Vislouhi/Java-OpenGL/blob/master/src/Particle.java
+
 Создаем контейнер для частиц вне цикла рендера
 	   
 	Map<Integer,Particle> particles = new HashMap<Integer, Particle>();
