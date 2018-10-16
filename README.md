@@ -1,25 +1,20 @@
 # Java-OpenGL
 
-# Александр
+# Александр Бугуев
 
-Помогаете Максиму с наложением прозрачной текстуры.
+План работы будет дополняться здесь.
 
-Помогаете Максиму(Илье) с вращением по клику на объекте.
 
-Сами переходите наиболее сложному вопросу - Наложение теней.
 
-https://lwjglgamedev.gitbooks.io/3d-game-development-with-lwjgl/content/chapter18/chapter18.html
+https://github.com/Vislouhi/Java-OpenGL/blob/master/TODO/AlexandrBuguev
 
-Если с наложением теней застрянете, займитесь структурой проекта.
+# Максим Кузовлев
 
-На сцене будет несколько объектов и несколько источников света. По некоторым объектам будет доступен клик.
-Некоторые объекты будут по клику вращаться некоторые перемещаться, некоторые будут изменять размер. Некоторые объекты 
-будут изменять положение
-в соответствии с данными, которые будут обновляться с течением времени.Будет перемещаться камера.
+Создать алгоритм обработки теней. Инструкция здесь:
 
-Ваша конечная цель это собрать макет программы в котором будут реализованы все возможные действия с объектами.
+https://github.com/Vislouhi/Java-OpenGL/blob/master/ShadowMaping.md
 
-Вы в праве на свое усмотрение распределять работу между любыми студентами, даже теми, кто занимается 3д моделингом.
+
 
 
 # Стартовый проект
@@ -40,104 +35,6 @@ https://www.lwjgl.org/browse/stable/windows/x64
 Справка по загрузке проекта на github здесь:
 
 http://wiki.eclipse.org/EGit/User_Guide#Basic_Tutorial:_Adding_a_project_to_version_control
-
-
-# Анатолий и Илья
-
-<h2>Дома.</h2>
-
-Обработка событий мыши описывается в этой статье.
-
-https://tutorialedge.net/java/lwjgl3/lwjgl-3-mouse-current-position-tutorial/
-
-Создается класс MouseHandler.
-
-Создается объект, ответственный за реакцию на события мыши.
-
-private GLFWCursorPosCallback mouseCallback;
-
-В процедуре init() указывается в какой объект будут отсылаться данные о положении курсора.
-
-glfwSetCursorPosCallback(window, mouseCallback = new MouseHandler());
-
-mouseCallback = new MouseHandler() эта запись означает, что прежде, чем процедура glfwSetCursorPosCallback  обработает
-объект mouseCallback он инициализируется с помощью конструктора MouseHandler().
-
-Класс можно и не создавать, а воспользоваться такой записью
-
-glfwCursorPosCallback(window, mouseCallback = new GLFWCursorPosCallback() {
-
-	@Override
-	public void invoke(long window, double xpos, double ypos) {
-		 //Здесь записывается код, который будет выполняться при изменении положения мыши
-    		System.out.println("X: " + xpos + " Y: " + ypos);
-   	}
-	
-});
-
-Обработка нажатий на кнопки мыши  производится аналогично
-
-https://github.com/LWJGL/lwjgl3-wiki/wiki/2.6.3-Input-handling-with-GLFW
-
-glfwSetMouseButtonCallback(window, mouseCallback = new GLFWMouseButtonCallback() {
-
-	@Override
-	public void invoke(long window, int button, int action, int mods) {
-		System.out.println("button: " + button + " action: " + action+ " mods: " + mods);
-	}
-});
-
-
-<h2>В аудитории.</h2>
-
-Поворот объекта.
-
-Объявить переменную класса GameItem
-
-private GameItem monkey;
-
-Инициализировать ее и задать поворот.
-
- monkey = new GameItem(mesh);  
-                 
- monkey.setRotation(30.0f,30.0f,30.0f);
- 
- Сделать в шейдере матрицу поворота.
- 
- "uniform mat4 rotationMatrix;"+
- 
-
-# Александр и Максим
-
-Сделать прозрачный объект.
-
-Будем работать по этой статье:
-
-https://habr.com/post/343096/
-
-Она написана на C++, но для java синтаксис практически такой же.
-
-Сначала придется освоить наложение текстур. Воспользуемся этой статьей
-
-https://lwjglgamedev.gitbooks.io/3d-game-development-with-lwjgl/content/chapter07/chapter7.html
-
-Класс, который загружает текстуру в видеокарту копируем в проект как есть
-
-https://github.com/lwjglgamedev/lwjglbook/blob/master/chapter08/src/main/java/org/lwjglb/engine/graph/Texture.java
-
-Отсюда добавим загрузку координат текстур в видеокарту. Изменения вносим в класс MeshFromBuffer. 
-
-https://github.com/lwjglgamedev/lwjglbook/blob/master/chapter08/src/main/java/org/lwjglb/engine/graph/Mesh.java
-
-Буфер с координатами текстур подгружаем с помощью этой библиотеки, она уже подключена:
-
-https://github.com/javagl/Obj
-
-Пример ее использования здесь:
-
-https://github.com/javagl/ObjSamples/blob/master/src/main/java/de/javagl/obj/samples/ObjSample_10_GetDataForOpenGL.java
-
-
 
 
 # Задачи.
