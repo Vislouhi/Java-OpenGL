@@ -26,15 +26,19 @@
   
 3. Создать файл для подгрузки сцены.
 
-   [Static]
-   object1.obj
-   object2.obj
-    ...
-  [Dynamic]
-  mesh=mesh.obj
-  rotation=true
-  rotationBoinds
-  
+ [Static]
+ object1.obj
+ object2.obj
+ ...
+ [Dynamic]
+ mesh=mesh.obj
+ rotation=true
+ rotationBound1=30
+ rotationBound2=50
+ rotationAxis=0.3 3.8 0.0
+ rotationPoint=1.0 2.1 0.7
+ 
+ 
   - rotationAxis
   
   - rotationPoint
