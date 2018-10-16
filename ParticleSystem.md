@@ -80,6 +80,41 @@ https://github.com/lwjglgamedev/lwjglbook/blob/master/chapter21/c21-p1/src/main/
            
            glDisableVertexAttribArray(0);
            glBindVertexArray(0);
+	   
+Создаем контейнер для частиц вне цикла рендера
+	   
+	Map<Integer,Particle> particles = new HashMap<Integer, Particle>();
+
+Создаем индекс частицы
+	
+	int particleIndex=1;
+	
+Создаем новую частицу и кладем ее в контейнер
+
+	if(Math.random()>0.8f) {
+  		Particle particle = new Particle();
+    		particles.put(particleIndex, particle);
+    		particleIndex++;
+        }
+	
+Рисуем все частицы из контейнера	
+	
+	//Стандартный синтаксис для перебора всех объектов контейнера
+	for (Iterator<Map.Entry<Integer,Particle>>it=particles.entrySet().iterator();it.hasNext();)
+           {	   //Для удобства создаем отдельную переменную
+        	   Map.Entry<Integer,Particle> entry = it.next();
+        	   //Если частица умерла, удаляем ее из контейнера.
+        	   if (entry.getValue().isDied()) {it.remove();} else
+        	   {	//Меняем позицию частицы
+        		   entry.getValue().setPosition (entry.getValue().getPosition().x+0.1f,0.0f,0.0f);
+			   //Уменьшаем время жизни частицы
+        		   entry.getValue().updateTtl();
+			   
+        		   shaderProgram.setUniform("particlePosition",entry.getValue().getPosition());
+                   
+                   	   glDrawElements(GL_TRIANGLES, Podstavkablend.getMesh().getVertexCount(), GL_UNSIGNED_INT, 0);
+        	   }
+           }
 
 
 
