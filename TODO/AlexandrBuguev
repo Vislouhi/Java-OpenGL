@@ -1,30 +1,9 @@
 1. На данный момент цикл рендера выполняется в непрерывном потоке, при этом FPS имеет максимальное значение. Необходимо сделать
 так, чтобы FPS можно было задавать. Для этого нужно создать таймер, и по событиям таймера вызывать рендер.
 
-2. В классе GameItem оформить объекты обслуживающие взаимодействие с предметами.
+
   
-  
-  - translationBounds - две точки между которыми может происходить перемещение объекта по прямой.
-  
-  
-  
-  - rotationBoinds
-  
-  - rotationAxis
-  
-  - rotationPoint
-  
-  - actionOnLMB
-  
-  - actionOnRMB
-  
-  - glowingMesh
-  
-  - glowingColor
-  
-  - mouseAimText
-  
-3. Создать файл для подгрузки сцены.
+2. Создать файл для подгрузки сцены.
 
  [Static]
  object1.obj
@@ -80,21 +59,4 @@
  onEventKey=accelerationStart
  offEventKey="ccelerationFinish
  
- [Button]
  
- 
- 
- 
- 
- 
-  - rotationAxis
-  
-  - rotationPoint
-  
-  - actionOnLMB
-  
-  - actionOnRMB
-  
-  - glowingMesh
-  
-  - glowingColor
