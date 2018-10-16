@@ -10,7 +10,7 @@
  object2.obj
  ...
  [Interface]
- name=klemma
+ name=ruchka
  mesh=mesh.obj
  rotation=true
  rotationBound1=30
@@ -18,35 +18,54 @@
  rotationAxis=0.3 3.8 0.0
  rotationPoint=1.0 2.1 0.7
  actionOnLMB=rotate
+ [Interface]
+ name=telega
+ mesh=mesh.obj
  translation=true
  translationBound1=1.0 2.1 0.7
  translationBound2=1.0 2.1 0.7
  actionOnRMB=translate
+ [Interface]
+ name=klemma
+ mesh=mesh.obj
  glowing=true
  glowMesh=glow.obj
  glowAlpha=0.5
  actionOnRMB=glow
+ [Interface]
+ name=provod
+ mesh=mesh.obj
  show=true
  showMesh=showMesh.obj
  actionOnRMB=show
+ [Interface]
+ name=ampermetr
+ mesh=mesh.obj
  zoom=true
  zoomPoint = 1.0 2.1 0.7
  zoomMaxRange=2.0
  actionOnScrollWheel=zoom
+ [Interface]
+ name=nadpisDlaKlemmy
+ mesh=mesh.obj
  hud=true
  hud=hud.png
  hud Position=20.1% 50.3%
+ [Interface]
+ name=zapuskMaiatnika
+ mesh=mesh.obj
  invoke=true
  invokeKey=accelerationStart
+ [Interface]
+ name=ruchka
+ mesh=mesh.obj
  swap=true
  swapRotation=true
- swapRotationBound1=30
- swapRotationBound2=50
+ swapRotationAngle=50
  swapRotationAxis=0.3 3.8 0.0
  swapRotationPoint=1.0 2.1 0.7
  swapTranslation=true
- swapTranslationBound1=1.0 2.1 0.7
- swapTranslationBound2=1.0 2.1 0.7
+ swapTranslationPoint=1.0 2.1 0.7
  actionOnRMB=swap
  
  [DyanmicProcess]
@@ -57,16 +76,53 @@
  springStep=1.0
  springRadius=10.0
  springK=2.0
+ springMass=2.0
  onEventKey=springStart
  offEventKey=springFinish
+ invokeKey=springStart
+ 
  
  [DyanmicProcess]
  name=acceleration
  object=movingMesh.obj
- startPoint=0.5
- endPoint=2.5
- accelerationForce=2.3;
+ startPoint=0.5 2.4 5.3
+ endPoint=2.5 4.7 5.6
+ accelerationForce=2.3
+ initialVelocity=0.0 0.0 0.0
  onEventKey=accelerationStart
- offEventKey="ccelerationFinish
+ offEventKey=accelerationFinish
+ invokeKey=accelerationStart
+ 
+ [DyanmicProcess]
+ name=accelerationAndRotation
+ object=movingRotatingMesh.obj
+ movingRotatinRatio=2.3
+ startPoint=0.5 2.4 5.3
+ endPoint=2.5 4.7 5.6
+ accelerationForce=2.3
+ initialVelocity=0.0 0.0 0.0
+ onEventKey=accelerationStart
+ offEventKey=accelerationFinish
+ invokeKey=wheelStart
+ 
+ [DyanmicProcess]
+ name=ticker
+ object=tickerMesh.obj
+ tickerPoint=0.5 0.4 4.5
+ length=0.0
+ onEventKey=accelerationStart
+ offEventKey=accelerationFinish
+ invokeKey=tickerStart
+ 
+ [ParticleProcess]
+ name=water
+ radius=0.5
+ color=0xffffff
+ startPoint=1.0 3.0 2.0
+ endPoint=2.0 4.9 3.5
+ numberOfParticles=100
+ speed=3.4
+ invokeKey=waterStart
+ 
  
  
