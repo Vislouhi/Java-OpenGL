@@ -14,6 +14,20 @@ https://github.com/Vislouhi/Java-OpenGL/blob/master/TODO/AlexandrBuguev
 
 https://github.com/Vislouhi/Java-OpenGL/blob/master/ShadowMaping.md
 
+# Мария Трушникова
+
+Здесь таймер:
+
+https://github.com/Vislouhi/Java-OpenGL/blob/master/src/FpsMain.java
+
+Создать файл загрузки модели (в блокноте). Загрузить его в java и отпрасить. Создать класс для хранения данных и занести все изъятые данные в него.
+
+Файл здесь:
+
+https://github.com/Vislouhi/Java-OpenGL/blob/master/TODO/AlexandrBuguev
+
+
+
 
 
 
