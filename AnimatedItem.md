@@ -46,9 +46,9 @@ uniform mat4 rotationMatrix;
 
 и домножаем вектор позиций и вектор нормалей на эту матрицу врашения:
 
-vec4 mvPos = modelViewMatrix *rotationMatrix* vec4(position, 1.0);
+	vec4 mvPos = modelViewMatrix*rotationMatrix*vec4(position, 1.0);
 
-mvVertexNormal = normalize(modelViewMatrix * rotationMatrix*vec4(vertexNormal, 0.0)).xyz;
+	mvVertexNormal = normalize(modelViewMatrix * rotationMatrix*vec4(vertexNormal, 0.0)).xyz;
 
 После этого обычным способом настраиваем передачу матрицы врашения в шейдер предварительно ее вычислив
 
