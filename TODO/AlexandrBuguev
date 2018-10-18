@@ -3,7 +3,22 @@
 
 2. Научить GameItem ловить события.
 
-Создать  класс SceneEvent
+Создать  классы 
+
+SceneControlData - класс содержащий передаваемые данные 
+
+SceneEvent - класс события
+
+SceneEventListener - класс слушателя
+
+ThrowSceneEvent - клас отправляющий события.
+
+Т.к. GameItem Слушает события имплементируем в него интерфейс SceneEventListene.
+
+public class CatchSceneEvent implements SceneEventListener
+
+
+
   
 3. Создать систему подгрузки сцены из файла. Структура файла примерно такая
 
