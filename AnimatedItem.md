@@ -80,7 +80,7 @@ https://github.com/Vislouhi/Java-OpenGL/blob/master/Events.md
 	
 	private GameItem gI;
 	public DynamicMathThreads(GameItem gameItem){
-		
+		//Принимаем ссылку на gameItem из которого запускается поток
 		this.gI=gameItem;
 	}
 
@@ -89,6 +89,7 @@ https://github.com/Vislouhi/Java-OpenGL/blob/master/Events.md
 	{
 		
 		int i=0;
+		//Апдейтим угол вращения
 		while(i<20) {
 			gI.rotationAngle+=0.1f;
 			i++;
@@ -101,3 +102,10 @@ https://github.com/Vislouhi/Java-OpenGL/blob/master/Events.md
 
 	}
 	}
+	
+Запускаем асинхронный поток так:
+
+	DynamicMathThreads rotThread = new DynamicMathThreads(this);	//Создание потока
+	rotThread.start();
+
+Теперь по нажатию LMB должен произойти плавный поворот модели.
