@@ -42,7 +42,7 @@
 
 После этого в vShader добавляем
 
-uniform mat4 rotationMatrix;
+	uniform mat4 rotationMatrix;
 
 и домножаем вектор позиций и вектор нормалей на эту матрицу врашения:
 
