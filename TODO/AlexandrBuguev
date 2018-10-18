@@ -13,9 +13,43 @@ SceneEventListener - класс слушателя
 
 ThrowSceneEvent - клас отправляющий события.
 
-Т.к. GameItem Слушает события имплементируем в него интерфейс SceneEventListene.
+Классы здесь:
+
+https://github.com/Vislouhi/Java-OpenGL/tree/master/src
+
+Т.к. GameItem Слушает события имплементируем в него интерфейс SceneEventListener.
 
 public class CatchSceneEvent implements SceneEventListener
+
+Создаем источник событий, пока один на всю программу. Описываем его глобально в классе Main.
+
+ThrowSceneEvent thrower = new ThrowSceneEvent();
+
+Все объекты gameItem, которые слушают события, должны быть занесены в список сразу же, как объект gameItem, был создан.
+
+thrower.addEventListener(gameItem);
+
+Создаем переменную класса, который хранит передаваемые данные.
+
+SceneControlData str =new SceneControlData();
+
+Задаем данные в теле методов invoke(), которые вызываются при нажатии на кнопки мыши, или ее перемещении.
+
+str.name="name";
+
+str.angle=10.0f;
+
+И тут же вызываем событие с отправкой этих данных.
+
+thrower.fireEvent(str);
+
+Сделаем эту процедуру в классе GameItem. Она будет выполняться если совершилось событие.
+
+    public void handleSceneEvent(EventObject e)    {
+		    SceneEvent ev =(SceneEvent) e;
+		    System.out.println(ev.toSceneControlData().getName());
+	 }
+
 
 
 
