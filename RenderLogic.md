@@ -3,45 +3,45 @@
 
 
 
-  openShadowMapProc()  
-  {
-  //Некоторые настройки.
-  shadowShaderProgramm.bind();
-  shadowShaderProgramm.setUniform();
-  }
+    openShadowMapProc()  
+    {
+    //Некоторые настройки.
+    shadowShaderProgramm.bind();
+    shadowShaderProgramm.setUniform();
+    }
 
-  for(перебор всех gameItem)
-  {
+    for(перебор всех gameItem)
+    {
 
-  gameItem.render();
-  {
+     gameItem.render();
+    {
             glEnableVertexAttribArray();
             glDrawElements();
             glDisableVertexAttribArray();
-  }
+    }
 
-  }
+    }
 
-  closeShadowMapProc()  
-  {
+    closeShadowMapProc()  
+    {
 
-  shadowShaderProgramm.unbind();
-  //Некоторые настройки.
-  }
+    shadowShaderProgramm.unbind();
+     //Некоторые настройки.
+     }
 
-  openMainRenderProc()  
-  {
-  //Некоторые настройки.
-  mainShaderProgramm.bind();
-  mainShaderProgramm.setUniform();
-  }
+      openMainRenderProc()  
+      {
+      //Некоторые настройки.
+      mainShaderProgramm.bind();
+      mainShaderProgramm.setUniform();
+     }
 
 
-  for(перебор всех gameItem)
-  {
+      for(перебор всех gameItem)
+      {
 
-  gameItem.render();
-  {
+      gameItem.render();
+      {
             
             setUniform("isTextured",gameItem.isTextured);
             При этом в шейдере прописываем
@@ -55,13 +55,13 @@
             glEnableVertexAttribArray();
             glDrawElements();
             glDisableVertexAttribArray();
-  }
+      }
 
   
 
 
-  closeMainRenderProc()  
-  {
-  mainShaderProgramm.unbind();
-  //Некоторые настройки.
-  }
+      closeMainRenderProc()  
+      {
+      mainShaderProgramm.unbind();
+      //Некоторые настройки.
+      }
