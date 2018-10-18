@@ -31,17 +31,17 @@ https://github.com/Vislouhi/Java-OpenGL/tree/master/src
 
 Создаем переменную класса, который хранит передаваемые данные.
 
-	SceneControlData str =new SceneControlData();
+	SceneControlData data =new SceneControlData();
 
 Задаем данные в теле методов invoke(), которые вызываются при нажатии на кнопки мыши, или ее перемещении.
 
-	str.name="name";
+	data.name="name";
 
-	str.angle=10.0f;
+	data.angle=10.0f;
 
 И тут же вызываем событие с отправкой этих данных.
 
-	thrower.fireEvent(str);
+	thrower.fireEvent(data);
 
 Сделаем эту процедуру в классе GameItem. Она будет выполняться если совершилось событие.
 
@@ -49,6 +49,29 @@ https://github.com/Vislouhi/Java-OpenGL/tree/master/src
 		    SceneEvent ev =(SceneEvent) e;
 		    System.out.println(ev.toSceneControlData().getName());
 	 }
+
+Событие передается сразу всем объектам gameItem, но действие должно происходить только с одним.
+
+Пусть класс SceneControlData содержит переменную 
+
+	public int id;
+
+Тогда перед отправкой события положим в id vaoId, которое было вытащено из рендера при чтении данных шаблона.
+
+	data.id=vaoId;
+	
+Теперь при приеме события можно проверить относится ли событие к конкретному gameItem.
+
+    public void handleSceneEvent(EventObject e)    {
+    		    
+		    SceneEvent ev =(SceneEvent) e;
+		    if (ev.toSceneControlData().getId()==vaoId){
+		       //Здесь описываются изменение параметров gameItem
+		    }
+	 }
+
+	
+	
 
 
 
