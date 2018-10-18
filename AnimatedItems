@@ -1,0 +1,54 @@
+# Анимирование объектов
+
+Рассмотрим случай, когда необходимо повернуть ручку электрического ключа. Пусть при нажатии на ручку, ручка должна плавно повернуться.
+
+Сначала отработаем собственно поворот вокруг заданной точки и заданной оси. В класс GameItem добавим:
+
+    private final Vector3f rotationPoint;
+    
+    private final Vector3f rotationAxis;
+    
+    private final Matrix4f rotationMatrix;
+    
+    public float rotationAngle;
+
+    public void setRotationPoint(float x, float y, float z) {
+        this.rotationPoint.x = x;
+        this.rotationPoint.y = y;
+        this.rotationPoint.z = z;
+    }
+    
+    public void setRotationAxis(float x, float y, float z) {
+        this.rotationAxis.x = x;
+        this.rotationAxis.y = y;
+        this.rotationAxis.z = z;
+    }
+    
+    public void setRotationAngle(float angle) {
+        this.rotationAngle=angle;
+        
+    }
+    
+    public Matrix4f updateRotationMatrix() {
+    	
+    	this.rotationMatrix.identity();
+    	this.rotationMatrix.translate(rotationPoint);
+    	this.rotationMatrix.rotate(rotationAngle,rotationAxis);
+    	this.rotationMatrix.translate(-rotationPoint.x,-rotationPoint.y,-rotationPoint.z);
+    	return rotationMatrix;
+    }
+
+
+
+
+
+
+Предположим, что эта инструкция по созданию событий уже выполнена:
+
+https://github.com/Vislouhi/Java-OpenGL/blob/master/Events.md
+
+Тогда в классе gameItem имеем метод
+
+    public void handleSceneEvent(EventObject e)    {
+		    //      	  	
+		}
