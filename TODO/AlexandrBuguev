@@ -2,8 +2,7 @@
 так, чтобы FPS можно было задавать. Для этого нужно создать таймер, и по событиям таймера вызывать рендер.
 
 2. Научить GameItem ловить события.
-
- https://github.com/Vislouhi/Java-OpenGL/blob/master/Events.md
+https://github.com/Vislouhi/Java-OpenGL/blob/master/Events.md
 
 3. Структура рендера
 
