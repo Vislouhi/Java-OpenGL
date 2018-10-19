@@ -26,7 +26,8 @@ https://github.com/Vislouhi/Java-OpenGL/blob/master/src/FpsMain.java
 
 Файл здесь:
 
-https://github.com/Vislouhi/Java-OpenGL/blob/master/TODO/AlexandrBuguev
+
+https://github.com/Vislouhi/Java-OpenGL/blob/master/sceneConfigFile.md
 
 
 
