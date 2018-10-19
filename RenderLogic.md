@@ -57,7 +57,7 @@
             glDisableVertexAttribArray();
       }
 
-  
+      }
 
 
       closeMainRenderProc()  
