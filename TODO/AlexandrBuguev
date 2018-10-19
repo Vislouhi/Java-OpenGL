@@ -3,15 +3,15 @@
 
 2. Научить GameItem ловить события.
 
-https://github.com/Vislouhi/Java-OpenGL/blob/master/Events.md
+ https://github.com/Vislouhi/Java-OpenGL/blob/master/Events.md
 
 3. Структура рендера
 
-https://github.com/Vislouhi/Java-OpenGL/blob/master/RenderLogic.md
+ https://github.com/Vislouhi/Java-OpenGL/blob/master/RenderLogic.md
 
 4. Анимирование
 
-https://github.com/Vislouhi/Java-OpenGL/blob/master/AnimatedItem.md
+ https://github.com/Vislouhi/Java-OpenGL/blob/master/AnimatedItem.md
 
 
 5. Создать систему подгрузки сцены из файла. Структура файла примерно такая
