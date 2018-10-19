@@ -6,7 +6,7 @@
 
 
 
-https://github.com/Vislouhi/Java-OpenGL/blob/master/TODO/AlexandrBuguev
+https://github.com/Vislouhi/Java-OpenGL/blob/master/TODO/AlexandrBuguev.md
 
 # Максим Кузовлев
 
