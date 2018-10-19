@@ -30,14 +30,9 @@ rotationAngle1=0.3
 
 rotationAngle2=2.3
 
-onAction=razomknutCep
-{
-setValue=0
-}
-onAction=zamknutCep
-{
-setValue=resistance*0.5
-} 
+onAction=razomknutCep{setValue=0}
+
+onAction=zamknutCep{setValue=resistance*0.5} 
  
 [krokodil.obj]
 
