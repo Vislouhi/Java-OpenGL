@@ -3,7 +3,7 @@
 
 2. Научить GameItem ловить события. 
 
-<a href="https://github.com/Vislouhi/Java-OpenGL/blob/master/Events.md">События/</a>
+https://github.com/Vislouhi/Java-OpenGL/blob/master/Events.md
 
          
 
