@@ -21,4 +21,8 @@ https://github.com/Vislouhi/Java-OpenGL/blob/master/Events.md
 
  https://github.com/Vislouhi/Java-OpenGL/blob/master/sceneConfigFile.md
  
+6. Деление модели на подмодели по материалам
+
+https://github.com/Vislouhi/Java-OpenGL/blob/master/SplitGameItemByMaterial.MD
+ 
  
