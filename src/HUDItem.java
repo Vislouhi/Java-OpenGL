@@ -22,17 +22,19 @@ public class HUDItem {
 	public HUDItem(String filename,float x, float y,float w,float h)
 	{
 		try {
+			//Текстура с прозрачным фоном
 			this.texture = new Texture(filename);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
-		
+				//Координаты положения HUD, ширина и высота задаются в процентах
 				float startX=-1f+2f*x/100f;
 				float startY=-1f+2f*(100f-y)/100f;
 				float width=2f*w/100f;
 				float height=2f*h/100f;
+				//Создаем прямоугольник из трех треугольников
 				float[] vertices = new float[]{
 						startX,  startY, 0.0f,
 						startX, startY-height, 0.0f,
@@ -41,7 +43,7 @@ public class HUDItem {
 						startX+width, startY-height, 0.0f,
 						startX+width, startY, 0.0f
 					};
-				
+				//Накладываем на этот квадрат картинку корректно задавая координаты текстуры
 				float[] texCoords = new float[]{
 						0f,  0f, 
 						0f, 1f, 
@@ -50,7 +52,9 @@ public class HUDItem {
 						1f, 1f,
 						1f, 0f
 					};
-				vaoId = glGenVertexArrays();
+		    //Берем кусочек из класса Mesh.
+		// Перегоняем массивы в буферы и грузим их в видеокарту
+		    vaoId = glGenVertexArrays();
 	            glBindVertexArray(vaoId);
 
 	            // Position VBO
@@ -74,7 +78,7 @@ public class HUDItem {
 	}
 	public void render(ShaderProgram shaderProgramm)
 	{
-		
+		//описываем рендер квадрата с текстурой.
 		shaderProgramm.setUniform("texture_sampler",0);
 		texture.bind();
 		glBindVertexArray(vaoId);
