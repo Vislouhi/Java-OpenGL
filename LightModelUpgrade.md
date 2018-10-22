@@ -36,13 +36,69 @@
 
 Будем принимать в шейдер положение источника света в виде такой структуры
 
+    //Эта структура описывает параметры затухания света
+    struct Attenuation
+    {
+        float constant;
+        float linear;
+        float exponent;
+    };
+    
     struct PointLight
     {
        vec3 colour;
        // Light position is assumed to be in view coordinates
        vec3 position;
-        float intensity;
+       float intensity;
        Attenuation att;
     };
     
-Для передачи в шейдер этих данных добавим в ShaderProgramm методы    
+Для передачи в шейдер этих данных добавим в ShaderProgramm методы 
+
+
+        public void createPointLightUniform(String uniformName) throws Exception {
+                createUniform(uniformName + ".colour");
+                createUniform(uniformName + ".position");
+                createUniform(uniformName + ".intensity");
+                createUniform(uniformName + ".att.constant");
+                createUniform(uniformName + ".att.linear");
+                createUniform(uniformName + ".att.exponent");
+        }
+        
+        public void setUniform(String uniformName, PointLight pointLight) {
+                setUniform(uniformName + ".colour", pointLight.getColor());
+                setUniform(uniformName + ".position", pointLight.getPosition());
+                setUniform(uniformName + ".intensity", pointLight.getIntensity());
+                PointLight.Attenuation att = pointLight.getAttenuation();
+                setUniform(uniformName + ".att.constant", att.getConstant());
+                setUniform(uniformName + ".att.linear", att.getLinear());
+                setUniform(uniformName + ".att.exponent", att.getExponent());
+        }
+        
+Класс PointLight здесь
+
+https://github.com/lwjglgamedev/lwjglbook/blob/master/chapter12/c12-p1/src/main/java/org/lwjglb/engine/graph/PointLight.java
+
+Теперь в шейдер добавим расчет модели освещения для точечного источника света
+
+    vec4 calcPointLight(PointLight light, vec3 position, vec3 normal)
+    {
+        vec3 light_direction = light.position - position;
+        vec3 to_light_dir  = normalize(light_direction);
+        vec4 light_colour = calcLightColour(light.colour, light.intensity, position, to_light_dir, normal);
+
+         // Apply Attenuation
+         float distance = length(light_direction);
+        float attenuationInv = light.att.constant + light.att.linear * distance +
+        light.att.exponent * distance * distance;
+        return light_colour / attenuationInv;
+      }
+      
+ Таким образом, отображение отраженного света стало зависеть от растояния до источника света.
+ 
+ Теперь можно записать
+ 
+    fragColor = calcPointLight(light1,mvPositions,mvNormal)+
+                calcPointLight(light2,mvPositions,mvNormal);
+ 
+ 
