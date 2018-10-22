@@ -1,5 +1,5 @@
 # Java-OpenGL
-# <center CHALLENGE>
+<h1 center CHALLENGE>
 
 ## Условия победы
 
