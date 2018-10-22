@@ -21,5 +21,13 @@ https://github.com/Vislouhi/Java-OpenGL/blob/master/Events.md
 5. Деление модели на подмодели по материалам
 
 https://github.com/Vislouhi/Java-OpenGL/blob/master/SplitGameItemByMaterial.MD
+
+6.Загрузка материала в шейдер
+
+https://github.com/Vislouhi/Java-OpenGL/blob/master/materialUpload.md
+
+7. Несколько источников света
+
+https://github.com/Vislouhi/Java-OpenGL/blob/master/LightModelUpgrade.md
  
  
