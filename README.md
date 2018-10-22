@@ -27,6 +27,10 @@ https://github.com/Vislouhi/Java-OpenGL/blob/master/TODO/AlexandrBuguev.md
 
 https://github.com/Vislouhi/Java-OpenGL/blob/master/ShadowMaping.md
 
+Вывод HUD
+
+https://github.com/Vislouhi/Java-OpenGL/blob/master/HUD.md
+
 # Мария Трушникова
 
 Здесь таймер:
