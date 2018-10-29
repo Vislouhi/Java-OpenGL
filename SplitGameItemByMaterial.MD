@@ -46,6 +46,15 @@ MeshFromBuffers сколько материлов есть в этом объе�
              glDisableVertexAttribArray();
         }
     }
+    
+    
+Дополнительно:
+
+Рабочий код под андроид:
+
+
+https://github.com/Vislouhi/Java-OpenGL/blob/master/src/GameItem.java
+
 
 
 
