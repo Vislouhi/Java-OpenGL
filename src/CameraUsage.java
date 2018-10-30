@@ -4,9 +4,22 @@ Camera camera = new Camera();
 camera.start();
 
 
+
+
+void invoke()
+{
+
+if (w_key_pressed){  
 data.mode=1;
+data.walkForvard=ture;
+  thrower.fireEvent(data);
+}
 
-data.wPressed=ture;
-
-
+if (w_key_released){  
+data.mode=1;
+data.walkForvard=ture;
+  
 thrower.fireEvent(data);
+}
+
+}
