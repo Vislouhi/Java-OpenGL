@@ -60,6 +60,10 @@ https://github.com/Vislouhi/Java-OpenGL/blob/master/sceneConfigFile.md
 
 https://habr.com/post/122397/
 
+Встроить код в эту схему:
+
+https://github.com/Vislouhi/Java-OpenGL/blob/master/src/SceneLoader.java
+
 
 # Стартовый проект
 
