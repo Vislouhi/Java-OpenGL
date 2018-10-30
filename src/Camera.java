@@ -4,7 +4,7 @@ public float currentVelocity;
 public float velocity;
 public float MAX_VELOCITY = 1f;
 public float ACCELERATION = 0.05f;
-public Vector3d direction;
+public Vector3f direction;
 public Camera()
 {
   velocity = 0;
@@ -55,7 +55,7 @@ public void setDirection(float angle)
       setDirection(90);
       velocity=MAX_VELOCITY;
       }
-      if (ev.toSceneControlData().strafeRight)&&(ev.toSceneControlData().wolkForward){
+      if (ev.toSceneControlData().strafeRight)&&(ev.toSceneControlData().walkForward){
       velocity=MAX_VELOCITY;
       setDirection(45);
       }
