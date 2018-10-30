@@ -31,6 +31,16 @@ https://github.com/Vislouhi/Java-OpenGL/blob/master/ShadowMaping.md
 
 https://github.com/Vislouhi/Java-OpenGL/blob/master/HUD.md
 
+# Максим Бузмаков
+
+Класс Camera модифицмруем так
+
+https://github.com/Vislouhi/Java-OpenGL/blob/master/src/Camera.java
+
+Отправляем события примерно так
+
+https://github.com/Vislouhi/Java-OpenGL/blob/master/src/Camera.java
+
 # Мария Трушникова
 
 Здесь таймер:
