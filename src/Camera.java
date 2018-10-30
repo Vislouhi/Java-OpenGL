@@ -35,7 +35,7 @@ public void setDirection(float angle)
 		 
    SceneEvent ev =(SceneEvent) e;
    if (ev.toSceneControlData().getMode()==1){
-      if (ev.toSceneControlData().wolkForward()){
+      if (ev.toSceneControlData().walkForward){
           velocity=MAX_VELOCITY;
 	  setDirection(0);
       }
@@ -43,19 +43,19 @@ public void setDirection(float angle)
         velocity=0f;
 	setDirection(0);
       }
-      if (ev.toSceneControlData().wolkBackward()){
+      if (ev.toSceneControlData().walkBackward){
         velocity=MAX_VELOCITY;
 	setDirection(180);
       }
-      if (ev.toSceneControlData().strafeLeft()){
+      if (ev.toSceneControlData().strafeLeft){
       setDirection(270);
       velocity=MAX_VELOCITY;
       }
-       if (ev.toSceneControlData().strafeRight()){
+       if (ev.toSceneControlData().strafeRight){
       setDirection(90);
       velocity=MAX_VELOCITY;
       }
-      if (ev.toSceneControlData().strafeRight())&&(ev.toSceneControlData().wolkForward()){
+      if (ev.toSceneControlData().strafeRight)&&(ev.toSceneControlData().wolkForward){
       velocity=MAX_VELOCITY;
       setDirection(45);
       }
