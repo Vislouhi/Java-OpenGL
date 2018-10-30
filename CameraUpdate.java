@@ -13,28 +13,28 @@ public Camera()
 
 public void setDirection(float angle)
 {
-this direction =  new Vector3f(0f,0f,1f).mul(new Matrix3f().identity().rotate(angle*314/180,new Vector3f(0f,1f,0f)));
+	this direction =  new Vector3f(0f,0f,1f).mul(new Matrix3f().identity().rotate(angle*314/180,new Vector3f(0f,1f,0f)));
 
 }
   
   
   @Override
-	public void run()	//Этот метод будет выполнен в побочном потоке
-	{
-		while(true){
+  public void run()	//Этот метод будет выполнен в побочном потоке
+  {
+    while(true){
       if (currentVelocity<velocity){currentVelocity+=ACCELERATION;}
       if (currentVelocity>velocity){currentVelocity-=ACCELERATION;}
       Vector3f dir = new Vector3f(direction).mul(currentVelocity);
       position.add(dir)
       Thread.sleep(20);
     }
-    System.out.println("Привет из побочного потока!");
-	}
+    
+ }
   
   public void handleSceneEvent(EventObject e)    {
 		 
-SceneEvent ev =(SceneEvent) e;
-if (ev.toSceneControlData().getMode()==1){
+   SceneEvent ev =(SceneEvent) e;
+   if (ev.toSceneControlData().getMode()==1){
       if (ev.toSceneControlData().wolkForward()){
           velocity=MAX_VELOCITY;
 	  setDirection(0);
