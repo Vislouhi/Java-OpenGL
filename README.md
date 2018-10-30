@@ -56,9 +56,9 @@ https://github.com/Vislouhi/Java-OpenGL/blob/master/src/FpsMain.java
 
 https://github.com/Vislouhi/Java-OpenGL/blob/master/sceneConfigFile.md
 
+Подключить это парсер формул
 
-
-
+https://habr.com/post/122397/
 
 
 # Стартовый проект
