@@ -10,7 +10,14 @@ public Camera()
   velocity = 0;
   currentVelocity=0;
 }
-	
+
+public void setDirection(float angle)
+{
+this direction =  new Vector3f(0f,0f,1f).mul(new Matrix3f().identity().rotate(angle*314/180,new Vector3f(0f,1f,0f)));
+
+}
+  
+  
   @Override
 	public void run()	//Этот метод будет выполнен в побочном потоке
 	{
@@ -26,22 +33,35 @@ public Camera()
   
   public void handleSceneEvent(EventObject e)    {
 		 
-		SceneEvent ev =(SceneEvent) e;
-		if (ev.toSceneControlData().getMode()==1){
+SceneEvent ev =(SceneEvent) e;
+if (ev.toSceneControlData().getMode()==1){
       if (ev.toSceneControlData().wolkForward()){
           velocity=MAX_VELOCITY;
+	  setDirection(0);
       }
       if (ev.toSceneControlData().stop()){
         velocity=0f;
+	setDirection(0);
       }
       if (ev.toSceneControlData().wolkBackward()){
-        velocity=-MAX_VELOCITY;
+        velocity=MAX_VELOCITY;
+	setDirection(180);
       }
       if (ev.toSceneControlData().strafeLeft()){
-      
+      setDirection(270);
+      velocity=MAX_VELOCITY;
       }
+       if (ev.toSceneControlData().strafeRight()){
+      setDirection(90);
+      velocity=MAX_VELOCITY;
+      }
+      if (ev.toSceneControlData().strafeRight())&&(ev.toSceneControlData().wolkForward()){
+      velocity=MAX_VELOCITY;
+      setDirection(45);
+      }
+      //etc...
    
     }
-	 }
+ }
 }
 
