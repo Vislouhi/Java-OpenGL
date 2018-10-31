@@ -33,5 +33,9 @@ https://github.com/Vislouhi/Java-OpenGL/blob/master/LightModelUpgrade.md
 8. Отладочная сцена
 
 https://github.com/Vislouhi/Blender-Labs/tree/master/models
+
+9. Применение геометрических преобразований к GameItem
+
+
  
  
