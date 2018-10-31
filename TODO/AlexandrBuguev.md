@@ -29,5 +29,9 @@ https://github.com/Vislouhi/Java-OpenGL/blob/master/materialUpload.md
 7. Несколько источников света
 
 https://github.com/Vislouhi/Java-OpenGL/blob/master/LightModelUpgrade.md
+
+8. Отладочная сцена
+
+https://github.com/Vislouhi/Blender-Labs/tree/master/models
  
  
