@@ -40,6 +40,10 @@ https://github.com/Vislouhi/Java-OpenGL/blob/master/GamItemTransformations.md
 
 10. Физика. Метод конечных разностей на примере пружины.
 
+https://github.com/Vislouhi/Java-OpenGL/blob/master/FiniteDifferenceMethod.md
 
+11. Рисование пружины
+
+https://github.com/Vislouhi/Java-OpenGL/blob/master/SpringDrawing.md
  
  
