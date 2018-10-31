@@ -2,7 +2,11 @@
 
 Движения тел описываются вторым законом Ньютона
 
-![Image alt](https://github.com/vislouhi/Blender-Labs/raw/master/images/lesson1/image1.png)
+![Image alt](https://github.com/Vislouhi/Java-OpenGL/blob/master/2newton.png)
+
+
+![Image alt](https://github.com/Vislouhi/Java-OpenGL/blob/master/2proizvodnaya.png)
+
 
 Производная в конечных разностях запишется так
 
