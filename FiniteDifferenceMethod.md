@@ -2,7 +2,7 @@
 
 Движения тел описываются вторым законом Ньютона
 
-
+![Image alt](https://github.com/vislouhi/Blender-Labs/raw/master/images/lesson1/image1.png)
 
 Производная в конечных разностях запишется так
 
