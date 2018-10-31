@@ -36,6 +36,10 @@ https://github.com/Vislouhi/Blender-Labs/tree/master/models
 
 9. Применение геометрических преобразований к GameItem
 
+https://github.com/Vislouhi/Java-OpenGL/blob/master/GamItemTransformations.md
+
+10. Физика. Метод конечных разностей на примере пружины.
+
 
  
  
