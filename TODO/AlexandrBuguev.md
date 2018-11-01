@@ -46,4 +46,7 @@ https://github.com/Vislouhi/Java-OpenGL/blob/master/FiniteDifferenceMethod.md
 
 https://github.com/Vislouhi/Java-OpenGL/blob/master/SpringDrawing.md
  
+12. Установка для проверки загрузки модели.
+
+https://drive.google.com/open?id=1SHp9Nk5oYcgJbL3WyFWrBPEvdLwa_To8
  
