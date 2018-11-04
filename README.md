@@ -33,13 +33,9 @@ https://github.com/Vislouhi/Java-OpenGL/blob/master/HUD.md
 
 ## Максим Бузмаков
 
-Класс Camera модифицмруем так
+Вывести на экран прицел. Код для этого взять у Максима Кузовлева.
 
-https://github.com/Vislouhi/Java-OpenGL/blob/master/src/Camera.java
-
-Отправляем события примерно так
-
-https://github.com/Vislouhi/Java-OpenGL/blob/master/src/Camera.java
+При наведении прицела на объект выводить подпись к этому объекту.
 
 ## Мария Трушникова
 
