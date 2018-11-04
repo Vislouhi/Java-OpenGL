@@ -38,6 +38,8 @@ https://github.com/Vislouhi/Blender-Labs/tree/master/models
 
 https://github.com/Vislouhi/Java-OpenGL/blob/master/GamItemTransformations.md
 
+***
+
 10. Физика. Метод конечных разностей на примере пружины.
 
 https://github.com/Vislouhi/Java-OpenGL/blob/master/FiniteDifferenceMethod.md
