@@ -12,6 +12,7 @@ import org.ini4j.Wini;
 public class SceneDataIni {
 	
 	public ArrayList<GameItem> gameItems = new ArrayList<>();
+	public ArrayList<ChainAnker> ankers = new ArrayList<>();
 	public Map<String,Float> values = new HashMap<>();
 	public SpringOscilator springOscilator;
 	MatchParser parser = new MatchParser();
@@ -84,7 +85,7 @@ public class SceneDataIni {
 					currentGameItem.setFileName(ini.get(currentObject, "fileName")); 
 					currentGameItem.setStatus(ini.get(currentObject, "status")); 
 					currentGameItem.setValue(ini.get(currentObject, "value")); 
-				
+					currentGameItem.setName(currentObject);
 					float posX=0f;
 					//Loading to the position value or formula
 					if (ini.get(currentObject, "positionXFormula")==null) {
@@ -161,7 +162,63 @@ public class SceneDataIni {
 					i++;
 					currentObject="object"+i;
 				}
+				
+				i=1;
+				while(ini.get("chainAnker"+i, "positionX")!=null)
+				{
+					
+					float posX=0f;
+					String formulaX=null;
+					String formulaY=null;
+					String formulaZ=null;
+					//Loading to the position value or formula
+					if (ini.get("chainAnker"+i, "positionXFormula")==null) {
+						posX=ini.get("chainAnker"+i, "positionX", float.class);
+						
+					}else {
+						formulaX=ini.get("chainAnker"+i, "positionX");
+					}
+					
+					float posY=0f;
+					if (ini.get("chainAnker"+i, "positionYFormula")==null) {
+						posY=ini.get("chainAnker"+i, "positionY", float.class);
+						
+					}else {
+						formulaY=ini.get("chainAnker"+i, "positionY");
+					}
+					
+					float posZ=0f;
+					if (ini.get("chainAnker"+i, "positionZFormula")==null) {
+						posZ=ini.get("chainAnker"+i, "positionZ", float.class);
+						
+					}else {
+						formulaZ=ini.get("chainAnker"+i, "positionZ");
+					}
+					
+					
+					ChainAnker currentAnker = new ChainAnker(new Vector3f(posX,posY,posZ),new Vector3f(
+							ini.get("chainAnker"+i, "stepX", float.class),
+							ini.get("chainAnker"+i, "stepY", float.class),
+							ini.get("chainAnker"+i, "stepZ", float.class)
+							),ini.get("chainAnker"+i, "radius", float.class));
+					currentAnker.setFormulaX(formulaX);
+					currentAnker.setFormulaY(formulaY);
+					currentAnker.setFormulaZ(formulaZ);
+					currentAnker.setStringValue(ini.get("chainAnker"+i, "value"));
+					int j=1;
+					while(ini.get("chainAnker"+i, "childObject"+j)!=null) {
+						
+						currentAnker.addAvailableObject(ini.get("chainAnker"+i, "childObject"+j));
+						
+						j++;
+					}
+					ankers.add(currentAnker);
+					i++;
+					
+				}
 				System.out.println( currentGameItem.getPosition().x );
+			
+			
 			} catch (InvalidFileFormatException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

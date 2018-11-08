@@ -2,9 +2,10 @@ package com;
 
 import java.util.ArrayList;
 
-public class GameItem extends Thread{
+public class GameItem{
 	public String fileName;
 	private String status;
+	private String name;
 	private String value;
 	public String positionXFormula;
 	public String positionYFormula;
@@ -33,6 +34,10 @@ public class GameItem extends Thread{
 	}
 	
 	
+	public void setName(String s)
+	{
+		this.name=s;
+	}
 	public String getValueKey()
 	{
 		return this.value;
