@@ -2,7 +2,7 @@
 
 ## Шейдеры
 
-String vppShader=
+	String vppShader=
         		"#version 330 \n"+
         		//location = 0 идентификатор для отправки данных в видеоадаптер
         		//этой процедурой glVertexAttribPointer(0{location=0}, 3, GL_FLOAT, false, 0, 0);
@@ -48,11 +48,11 @@ String vppShader=
 
 В основной шейдер vShader добавим
 
-"uniform vec3 translatoin;"+
+	"uniform vec3 translatoin;"+
 
 и заменим
 
-"vec4 mvPos = modelViewMatrix * vec4(position+translatoin, 1.0);"+
+	"vec4 mvPos = modelViewMatrix * vec4(position+translatoin, 1.0);"+
 
 добавим
 
@@ -60,7 +60,7 @@ String vppShader=
  
  В рендере 
  
- shaderProgram.bind();
+ 	shaderProgram.bind();
 	          
             //Вычисление проекционной матрицы
             projectionMatrix = transformation.getProjectionMatrix(FOV, 300, 300, Z_NEAR, Z_FAR);
@@ -100,3 +100,46 @@ String vppShader=
       Перед рисованием контура говорим рисовать контур тольк на фоне шаблона с индексом 1
       
       glStencilFunc(GL_EQUAL, 1, 0xFF);
+      
+## Упрошение шейдера для загрузки в FBO
+
+
+	String vForPpShader=
+        		"#version 330 \n"+
+        		//location = 0 идентификатор для отправки данных в видеоадаптер
+        		//этой процедурой glVertexAttribPointer(0{location=0}, 3, GL_FLOAT, false, 0, 0);
+        		//Прием позиций вершин
+				"layout (location = 0) in vec3 position;"+
+        		//Прием векторов нормалей к вершинам
+				
+        		//Так указывается переменная котороая будет засылатся в шейдер извне
+				"uniform mat4 projectionMatrix;"+
+				"uniform mat4 modelViewMatrix;"+
+				"uniform vec3 translatoin;"+
+				//Так объявляются переменные, которые будут отправлены в пиксельный шейдер
+				
+				"void main()"+
+				"{"+
+				//Преобразование координат объекта в соответствии с положением камеры
+ 				"vec4 mvPos = modelViewMatrix * vec4(position+translatoin, 1.0);"+
+			    //Применение проекции о отправка координат на отрисовку
+				"gl_Position = projectionMatrix * mvPos;"+
+			    //Преобразование векторов нормалей в соответствии с положением камеры
+				
+				"}";
+    	
+    	String fForPpShader=
+				"#version 330 \n"+
+				//Указатель на то, что для отображения цвета будет использоваться эта переменная
+				"out vec4 fragColor;"+
+				//Переменная для импорта положения источника света
+				
+				"void main()"+
+				"{"+
+				//Расчет направления падения света на данную вершину
+			
+				//Вычисление результирующего света
+				"fragColor = vec4(1.0, 1.0, 1.0, 1.0);"+
+				"}";
+				
+ 				
