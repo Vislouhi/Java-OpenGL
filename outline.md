@@ -101,7 +101,7 @@
       
       glStencilFunc(GL_EQUAL, 1, 0xFF);
       
-## Упрошение шейдера для загрузки в FBO
+## Упрощение шейдера для загрузки в FBO
 
 
 	String vForPpShader=
