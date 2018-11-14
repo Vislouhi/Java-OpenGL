@@ -31,6 +31,10 @@ https://github.com/Vislouhi/Java-OpenGL/blob/master/ShadowMaping.md
 
 https://github.com/Vislouhi/Java-OpenGL/blob/master/HUD.md
 
+Обводка
+
+https://github.com/Vislouhi/Java-OpenGL/blob/master/outline.md
+
 ## Максим Бузмаков
 
 Вывести на экран прицел. Код для этого взять у Максима Кузовлева.
