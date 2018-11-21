@@ -39,16 +39,6 @@ https://github.com/Vislouhi/Blender-Labs/tree/master/models
 https://github.com/Vislouhi/Java-OpenGL/blob/master/GamItemTransformations.md
 
 ***
-
-10. Физика. Метод конечных разностей на примере пружины.
-
-https://github.com/Vislouhi/Java-OpenGL/blob/master/FiniteDifferenceMethod.md
-
-11. Рисование пружины
-
-https://github.com/Vislouhi/Java-OpenGL/blob/master/SpringDrawing.md
- 
-12. Установка для проверки загрузки модели.
-
-https://drive.google.com/open?id=1SHp9Nk5oYcgJbL3WyFWrBPEvdLwa_To8
+10.  Примерная структура класса для визуализации планшета
+https://github.com/Vislouhi/Java-OpenGL/blob/master/src/Tab.java
  
