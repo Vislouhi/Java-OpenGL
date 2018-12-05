@@ -88,8 +88,8 @@ public class EditForm extends RenderForm implements SceneEventListener
 
 public class TabButton extends RenderForm implements SceneEventListener
 {
-  Texture texture;
-  Color visualMask;
+  
+Color visualMask;
 
 public void handleSceneEvent(EventObject e){
    if (e.lmbDown)
