@@ -1,6 +1,6 @@
 public class ActionMap{
 
- ArrayList<Action> actionList;
+Map<Color,Action> actionList;
  Tab tab;
  
  public void addAction(Color color,Action action)
