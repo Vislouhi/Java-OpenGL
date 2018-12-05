@@ -45,17 +45,18 @@ public class ActionMap{
   }
  }
 
-public class EditForm extends RenderForm
+public class EditForm extends RenderForm implements SceneEventListener
 {
  String text;
  int availableTextSize;
+ boolean focus;
  
  public void setText()
  {
  
  }
  
- public void setAvailableTextSize()
+ public void setAvailableTextSize(int availableTextSize)
  {
  
  }
@@ -63,6 +64,23 @@ public class EditForm extends RenderForm
  public String getText()
  {
  
+ }
+ 
+ public void focusOn()
+ {
+ 
+ }
+ 
+  public void focusOn()
+ {
+ 
+ }
+ 
+ 
+ 
+ public void handleSceneEvent(EventObject e){
+   //Здесь принимаем нажатие клавиши, апдейтим переменную текст
+   setText();
  }
  
 }
