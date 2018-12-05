@@ -50,10 +50,11 @@ public class EditForm extends RenderForm implements SceneEventListener
  String text;
  int availableTextSize;
  boolean focus;
+ Texture texture;
  
  public void setText()
  {
- 
+  texture.updateWithText(text);
  }
  
  public void setAvailableTextSize(int availableTextSize)
@@ -71,7 +72,7 @@ public class EditForm extends RenderForm implements SceneEventListener
  
  }
  
-  public void focusOn()
+  public void focusOff()
  {
  
  }
@@ -83,6 +84,25 @@ public class EditForm extends RenderForm implements SceneEventListener
    setText();
  }
  
+}
+
+public class TabButton extends RenderForm implements SceneEventListener
+{
+  Texture texture;
+  Color visualMask;
+
+public void handleSceneEvent(EventObject e){
+   if (e.lmbDown)
+   {
+     this.onPressVisualMask=true;
+   }
+   
+   if (e.lmbDown)
+   {
+    this.onPressVisualMask=false;
+   }
+   
+ }
 }
 
 public class Page{
