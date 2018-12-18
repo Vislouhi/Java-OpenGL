@@ -3,6 +3,14 @@
 Примерная структура класса для визуализации планшета
 https://github.com/Vislouhi/Java-OpenGL/blob/master/src/Tab.java
 
+class MatchParser
+
+https://github.com/Vislouhi/Java-OpenGL/blob/master/src/MatchParser.java
+
+class Script 
+
+https://github.com/Vislouhi/Java-OpenGL/blob/master/src/Script.java
+
 ## Общая стратегия
 
 ### Задача 1:
